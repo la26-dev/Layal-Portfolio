@@ -1,0 +1,246 @@
+/* ====== الصفحة ====== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #d430d4 0%, #6e156e 50%, #2a0227 100%);
+  color: #f0f0f0;
+  min-height: 300vh;
+}
+
+header {
+  width: 100%;
+  background-color: rgba(99, 37, 94, 0.85);
+  padding: 10px 15px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.header-top {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.avatar {
+  width: 50px;
+  height: 58px;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.name {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.nav-links {
+  margin-top: 5px;
+}
+
+.nav-links a {
+  margin: 0 8px;
+  text-decoration: none;
+  color: #d1c4f9;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+/* الهوم */
+#home {
+  padding-top: 135px; 
+  min-height: calc(100vh - 150px); 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+#home .section-content {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  gap: 40px;
+  text-align: left;
+}
+
+.home-avatar {
+  height: 200px;
+  border-radius: 0;
+  object-fit: cover;
+  animation: float 3s ease-in-out infinite;
+  margin: 0;
+}
+
+#home .text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+#home h2 {
+  color: #ffffff;
+  font-size: 36px;
+  margin: 0 0 10px 0;
+  text-shadow: 0 0 3px #d1c4f9, 0 0 6px #a27ff5, 0 0 9px #7a1fa2;
+}
+
+#home p {
+  font-size: 16px;
+  color: #e0d7f7;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* السكشنات */
+section {
+  padding: 40px 20px 60px 20px;
+  margin-top: 0;
+  background-color: transparent;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bolder; 
+  text-align: left; 
+  margin-left: 20px;
+  font-size: 28px;
+}
+
+.section-content {
+  max-width: 900px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* About Me Card */
+.about-card {
+  background-color: rgba(165, 71, 145, 0.85);
+  border-radius: 10px;
+  padding: 20px;
+  width: 95%;
+  max-width: 900px;
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* المشاريع */
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.project-card {
+  background-color: rgba(165, 71, 145, 0.85);
+  border-radius: 10px;
+  width: 95%;
+  max-width: 1200px;
+  text-align: center;
+  padding: 20px;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.project-card img {
+  width: 120px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto 15px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.project-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #f0e6ff;
+}
+
+.show-desc-btn {
+  background-color: #ffffff; /* الخلفية بيضاء */
+  color: #000000; /* النص أسود */
+  border: 1px solid #000000;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.show-desc-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+.project-desc {
+  margin-top: 10px;
+  text-align: left;
+  display: none;
+  color: #e0c3fc;
+}
+
+/* أيقونات التواصل */
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icon {
+  color: #000000; /* لون الأيقونة أسود */
+  background-color: transparent; /* بدون خلفية */
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #555555; /* يصير رمادي فاتح عند المرور */
+}
+
+
+
+/* صفحة CV*/
+.cv-image {
+  display: block;
+  max-width: 70%;
+  height: auto;
+  margin: 20px auto;
+  border: 2px solid #f0e6ff;
+}

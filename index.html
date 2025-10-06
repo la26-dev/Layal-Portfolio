@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <span class="name">Layal Albahsani</span>
+  </div>
+  <div class="nav-links">
+    <a href="#home">Home</a> | 
+    <a href="CV.html" target="_blank">CV</a> | 
+    <a href="#certificates">Certificates</a> | 
+    <a href="#projects">Projects</a> | 
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<section id="home">
+  <div class="section-content">
+    <img src="My photo.webp" class="home-avatar">
+    <div class="text-content">
+      <h2>I'M Layal Albahsani</h2>
+      <p>Ambitious Computer Science student | Interested in Web Development and committed to professional growth in technology</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-content">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-card">
+      <p>I am a Computer Science student eager to gain knowledge and practical skills in programming, databases, and software development. I have a passion for technology and leveraging it to create innovative solutions that serve the community and keep pace with the fast-evolving field. I focus on developing my skills through academic and volunteer projects, striving to combine theoretical knowledge with practical experience. I believe in teamwork and collaboration, aiming to be an effective member of any team I join. I am committed to continuous learning and exploring new areas in Computer Science, with an emphasis on building a strong foundation that will enable me to specialize in the most suitable field in the future.</p>
+    </div>
+  </div>
+</section>
+
+<section id="certificates">
+  <div class="section-content">
+    <h2 class="section-title">Certificates</h2>
+    <ul>
+      <li>AI Bootcamp - Artificial Intelligence Governance Association</li>
+      <li>Introduction to Artificial Intelligence</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-content">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Tic-Tac-Toe Game Development</h3>
+        <button class="show-desc-btn">Show Description</button>
+        <p class="project-desc">
+          Developed a Tic-Tac-Toe game in Java with a graphical user interface, applying object-oriented programming concepts to provide an interactive gameplay experience.
+          <strong>Technologies:</strong> Java
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>SDAIA Database Design Project</h3>
+        <button class="show-desc-btn">Show Description</button>
+        <p class="project-desc">
+          Created a relational database model for managing SDAIA’s internal structure, including departments, employees, projects, and task assignments. Focused on efficient design of relationships and integrity constraints using RDBMS principles.
+          <strong>Core Concepts:</strong> ER modeling, relational design, normalization, SQL
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-content">
+    <h4>Contact Me</h4>
+    <div class="social-icons">
+      <a href="http://linkedin.com/in/layal-abdullah" target="_blank">
+        <i class="fab fa-linkedin social-icon"></i>
+      </a>
+      <a href="https://github.com/la26-dev" target="_blank">
+        <i class="fab fa-github social-icon"></i>
+      </a>
+      <a href="mailto:Layal Albahsani@outlook.com">
+        <i class="fas fa-envelope social-icon"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  const buttons = document.querySelectorAll('.show-desc-btn');
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const desc = button.nextElementSibling;
+      if(desc.style.display === 'block') {
+        desc.style.display = 'none';
+        button.textContent = 'Show Description';
+      } else {
+        desc.style.display = 'block';
+        button.textContent = 'Hide Description';
+      }
+    });
+  });
+
+  const links = document.querySelectorAll(".nav-links a");
+  const sections = document.querySelectorAll("section");
+  links.forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const targetSection = document.getElementById(targetId);
+      targetSection.scrollIntoView({ behavior: "smooth" });
+      targetSection.classList.add("clicked");
+      setTimeout(() => { targetSection.classList.remove("clicked"); }, 500);
+    });
+  });
+
+  const faders = document.querySelectorAll(".section-content");
+  const appearOptions = { threshold: 0.1 };
+  const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+  faders.forEach(fader => { appearOnScroll.observe(fader); });
+</script>
+  
+
+</body>
+</html>
